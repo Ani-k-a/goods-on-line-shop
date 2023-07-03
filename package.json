@@ -1,8 +1,8 @@
 {
-  "name": "goods-on-line-shop",
+  "name": "greenshop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ani-k-a.github.io/goods-on-line-shop/",
+  "homepage": "https://ani-k-a.github.io/greenshop/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
