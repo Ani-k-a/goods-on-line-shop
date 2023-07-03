@@ -5,8 +5,8 @@ import Layout from './Layout/Layout';
 import Home from 'pages/Home/Home';
 import Catalog from 'pages/Catalog/Catalog';
 import ErrorViev from './ErrorViev/ErrorViev';
-import Sales from 'pages/Sales/Sales';
 import Basket from 'pages/Basket/Basket';
+import Sales from 'pages/Sales/Sales';
 
 export const App = () => {
   return (
@@ -15,8 +15,8 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="catalog/" element={<Catalog />} />
-          <Route path="sales/" element={<Sales />} />
           <Route path="basket/" element={<Basket />} />
+          <Route path="sales/" element={<Sales />} />
         </Route>
         <Route path="*" element={<ErrorViev />} />
       </Routes>

@@ -1,0 +1,20 @@
+.priceBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.price {
+  color: #000;
+  font-size: 30px;
+  font-weight: 600;
+}
+.oldPrice {
+  color: #8b8b8b;
+  font-size: 20px;
+  text-decoration-line: strikethrough;
+}
+.discount {
+  color: #ff32a1;
+  font-size: 20px;
+  font-weight: 600;
+}

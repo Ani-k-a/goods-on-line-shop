@@ -4,7 +4,8 @@ import Section from 'Section/Section';
 import { SlHandbag } from 'react-icons/sl';
 import css from './Layouts.module.css';
 import logo from '../../images/logo.png';
-import Footer from 'components/Footer/Footer';
+import Map from 'components/Map/Map';
+import Contacts from 'components/Contacts/Contacts';
 
 export default function Layout() {
   return (
@@ -16,7 +17,9 @@ export default function Layout() {
               <NavLink to="/">
                 <img alt="green logo" src={logo} className={css.logo} />
               </NavLink>
-              <NavLink className={css.catalog}>Catalog</NavLink>
+              <NavLink to="/catalog" className={css.catalog}>
+                Catalog
+              </NavLink>
             </div>
 
             <ul className={css.navList}>
@@ -36,8 +39,15 @@ export default function Layout() {
           </div>
         </Section>
       </header>
-      <Outlet></Outlet>
-      <Footer></Footer>
+      <main>
+        <Outlet></Outlet>
+      </main>
+      <footer>
+        <Section>
+          <Contacts></Contacts>
+        </Section>
+        <Map></Map>
+      </footer>
     </div>
   );
 }

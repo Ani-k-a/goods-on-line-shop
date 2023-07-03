@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 19px 0px 76px 0px;
 }
 .logoContainer {
   display: flex;
@@ -38,4 +37,10 @@
 .bag:hover,
 .bag:focus {
   font-weight: 800px;
+}
+
+@media screen and (max-width: 767px) {
+  .navList {
+    display: none;
+  }
 }

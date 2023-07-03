@@ -5,18 +5,18 @@
 }
 
 @media screen and (min-width: 480px) {
-  .section {
+  .container {
     width: 480px;
   }
 }
 @media screen and (min-width: 768px) {
-  .section {
+  .container {
     width: 768px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .section {
+  .container {
     width: 1280px;
   }
 }
