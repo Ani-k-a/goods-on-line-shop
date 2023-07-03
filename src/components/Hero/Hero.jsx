@@ -1,7 +1,8 @@
 import React from 'react';
 import css from './Hero.module.css';
-import Section from 'Section/Section';
+import Section from 'components/Section/Section';
 import img from '../../images/bg-image.png';
+import { NavLink } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -14,9 +15,9 @@ export default function Hero() {
           <div>
             <h2 className={css.title}>Sale</h2>
             <p className={css.description}>New season</p>
-            <a href="#sale" className={css.link}>
+            <NavLink to="/sales" className={css.link}>
               Sale
-            </a>
+            </NavLink>
           </div>
           <img src={img} alt="tree" className={css.img}></img>
         </div>

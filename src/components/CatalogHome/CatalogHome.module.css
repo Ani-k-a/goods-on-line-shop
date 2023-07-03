@@ -1,0 +1,38 @@
+.titleBlock {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.title {
+  color: #000;
+  font-size: 40px;
+  font-weight: 700;
+  margin-right: 102px;
+}
+.link {
+  display: inline-block;
+  color: #8b8b8b;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 15px;
+  border: 1px solid #8b8b8b;
+}
+
+.list {
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .list {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -2,5 +2,5 @@ import React from 'react';
 import css from './ProductsList.module.css';
 
 export default function ProductsList() {
-  return <div></div>;
+  return <div className={css.container}></div>;
 }

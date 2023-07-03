@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import Section from 'Section/Section';
+import Section from 'components/Section/Section';
 import { SlHandbag } from 'react-icons/sl';
 import css from './Layouts.module.css';
 import logo from '../../images/logo.png';

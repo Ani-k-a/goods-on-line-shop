@@ -1,0 +1,23 @@
+import React from 'react';
+import css from './Discount.module.css';
+import gnome from '../../images/gnome.png';
+import Section from 'components/Section/Section';
+
+export default function Discount() {
+  return (
+    <div className={css.block}>
+      <Section>
+        <div className={css.container}>
+          <div className={css.imgBlock}>
+            <h2 className={css.visuallyHidden}>Discount</h2>
+            <img alt="gnome" src={gnome}></img>
+          </div>
+          <divdiv className={css.offer}>
+            <h3 className={css.title}>5% off</h3>
+            <p className={css.description}>on the first order</p>
+          </divdiv>
+        </div>
+      </Section>
+    </div>
+  );
+}
