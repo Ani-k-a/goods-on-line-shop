@@ -12,10 +12,10 @@ export default function Discount() {
             <h2 className={css.visuallyHidden}>Discount</h2>
             <img alt="gnome" src={gnome}></img>
           </div>
-          <divdiv className={css.offer}>
+          <div className={css.offer}>
             <h3 className={css.title}>5% off</h3>
             <p className={css.description}>on the first order</p>
-          </divdiv>
+          </div>
         </div>
       </Section>
     </div>
