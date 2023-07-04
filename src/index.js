@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorViev />,
+    // errorElement: <ErrorViev />,
     children: [
       {
         path: '/',
@@ -48,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: '/category/:id',
         element: <ItemsFromCategory />,
+      },
+      {
+        path: '/*',
+        element: <ErrorViev />,
       },
 
     ],

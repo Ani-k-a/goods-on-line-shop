@@ -1,5 +1,9 @@
-import error from '../../images/error.jpg';
+import { useRouteError } from 'react-router-dom';
+import errorImg from '../../images/error.jpg';
+import css from './ErrorViev.module.css';
 
 export default function ErrorViev() {
-  return <img src={error} alt="Error 404"></img>;
+  const error = useRouteError();
+  console.log(error);
+  return <img src={errorImg} alt="Error 404" className={css.image}></img>;
 }
