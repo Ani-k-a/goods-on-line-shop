@@ -14,7 +14,7 @@ export default function Header() {
             <NavLink to="/">
               <img alt="green logo" src={logo} className={css.logo} />
             </NavLink>
-            <NavLink to="/catalog" className={css.catalog}>
+            <NavLink to="/category" className={css.catalog}>
               Catalog
             </NavLink>
           </div>
@@ -24,7 +24,7 @@ export default function Header() {
               <NavLink to="/">Main Page</NavLink>
             </li>
             <li className={css.navIcon}>
-              <NavLink to="/catalog">All products</NavLink>
+              <NavLink to="/category">All products</NavLink>
             </li>
             <li className={css.navIcon}>
               <NavLink to="/sales">All sales</NavLink>

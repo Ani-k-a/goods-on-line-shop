@@ -10,7 +10,7 @@ export default function CatalogHome({ arr }) {
       <Section>
         <div className={css.titleBlock}>
           <h2 className={css.title}>Catalog</h2>
-          <NavLink to="/catalog" className={css.link}>
+          <NavLink to="/category" className={css.link}>
             All categories
           </NavLink>
         </div>

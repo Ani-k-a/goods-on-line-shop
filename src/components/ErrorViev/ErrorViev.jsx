@@ -1,4 +1,3 @@
-import React from 'react';
 import error from '../../images/error.jpg';
 
 export default function ErrorViev() {

@@ -1,4 +1,3 @@
-import React from 'react';
 import css from './CatalogItem.module.css';
 
 export default function CatalogItem({ link, title }) {
