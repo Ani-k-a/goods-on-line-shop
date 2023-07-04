@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/greenshop/static/css/main.ccd786dd.css",
-    "main.js": "/greenshop/static/js/main.84114aeb.js",
+    "main.css": "/greenshop/static/css/main.4880a97d.css",
+    "main.js": "/greenshop/static/js/main.aa9a5fe6.js",
     "static/media/bg-image.png": "/greenshop/static/media/bg-image.deac318e03a035ef9116.png",
     "static/media/error.jpg": "/greenshop/static/media/error.b15db41e8ff13748852d.jpg",
     "static/media/gnome.png": "/greenshop/static/media/gnome.c036eea09188ab215dcb.png",
     "index.html": "/greenshop/index.html",
-    "main.ccd786dd.css.map": "/greenshop/static/css/main.ccd786dd.css.map",
-    "main.84114aeb.js.map": "/greenshop/static/js/main.84114aeb.js.map"
+    "main.4880a97d.css.map": "/greenshop/static/css/main.4880a97d.css.map",
+    "main.aa9a5fe6.js.map": "/greenshop/static/js/main.aa9a5fe6.js.map"
   },
   "entrypoints": [
-    "static/css/main.ccd786dd.css",
-    "static/js/main.84114aeb.js"
+    "static/css/main.4880a97d.css",
+    "static/js/main.aa9a5fe6.js"
   ]
 }
