@@ -16,7 +16,7 @@ export default function CatalogHome({ arr }) {
         </div>
         <ul className={css.list}>
           {/* {arr.map(el => (
-            <CatalogItem key={el.id} />
+            <CatalogItem key={el.id} {...el} />
           ))} */}
         </ul>
       </Section>
