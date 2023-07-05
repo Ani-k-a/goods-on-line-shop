@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import css from './ProductsList.module.css';
+import css from './Sales.list.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductsAll } from 'requests/fetchProductsList';
 import { selectFilteredProducts } from 'redux/selectors';
 import ProductItem from 'components/ProductItem/ProductItem';
 
-export default function ProductsList() {
+export default function SalesList() {
   const dispatch = useDispatch();
   const products = useSelector(selectFilteredProducts);
 
@@ -16,9 +16,9 @@ export default function ProductsList() {
 
   return (
     <ul className={css.container}>
-      {products.map(el => (
-        <ProductItem key={el.id} {...el} />
-      ))}
+      {products.map(el => {
+        return el.discont_price && <ProductItem key={el.id} {...el} />;
+      })}
     </ul>
   );
 }

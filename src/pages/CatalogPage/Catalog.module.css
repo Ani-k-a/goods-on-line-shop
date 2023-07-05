@@ -1,22 +1,6 @@
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 30px;
-}
-
-@media screen and (min-width: 480px) {
-  .container {
-    width: 480px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 1280px;
-  }
+.title {
+  color: #000;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 82px;
 }

@@ -1,11 +1,12 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = 'http://localhost:3333/';
+axios.defaults.baseURL = 'http://localhost:3333';
 
-export const fetchCategories = createAsyncThunk('products/fetchAllCategories', async (_, thunkApi) => {
+export const fetchCategoriesList = createAsyncThunk('products/fetchAllCategories', async (_, thunkApi) => {
     try {
         const response = await axios.get('/categories/all');
+        console.log(response.data);
         return response.data;
 
     } catch (error) {
