@@ -32,6 +32,7 @@
   font-weight: 600;
   font-style: normal;
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .adressDescription {
@@ -81,4 +82,22 @@
   .adressDescription {
     font-size: 40px;
   }
+}
+.contactList {
+  display: flex;
+  align-items: center;
+}
+
+.contactItem > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+}
+.contactItem:not(:last-child) {
+  margin-right: 65px;
+}
+
+.contactLogo {
+  font-size: 50px;
 }

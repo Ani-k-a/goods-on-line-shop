@@ -1,5 +1,7 @@
 import React from 'react';
 import css from './Contacts.module.css';
+import { PiInstagramLogoThin } from 'react-icons/pi';
+import { PiWhatsappLogoThin } from 'react-icons/pi';
 
 export default function Contacts() {
   return (
@@ -10,6 +12,20 @@ export default function Contacts() {
         <address className={css.phone}>
           <a href="tel:+499999999999">+49 999 999 99 99</a>
         </address>
+        <ul className={css.contactList}>
+          <li className={css.contactItem}>
+            <a href="/*">
+              <PiInstagramLogoThin className={css.contactLogo} />
+              Instagram
+            </a>
+          </li>
+          <li className={css.contactItem}>
+            <a href="/*">
+              <PiWhatsappLogoThin className={css.contactLogo} />
+              WhatsApp
+            </a>
+          </li>
+        </ul>
       </div>
       <div className={css.address}>
         <h3 className={css.title}>Address</h3>
