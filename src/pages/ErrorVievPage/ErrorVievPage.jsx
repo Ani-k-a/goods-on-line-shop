@@ -1,6 +1,6 @@
 import { useRouteError } from 'react-router-dom';
 import errorImg from '../../images/error.jpg';
-import css from './ErrorViev.module.css';
+import css from './ErrorVievPage.module.css';
 
 export default function ErrorViev() {
   const error = useRouteError();

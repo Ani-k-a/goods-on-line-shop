@@ -1,4 +1,4 @@
-import css from './ItemsFromCategory.module.css';
+import css from './ItemsFromCategoryPage.module.css';
 
 export default function ItemsFromCategory() {
   return (

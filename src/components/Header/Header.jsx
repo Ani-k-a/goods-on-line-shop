@@ -24,7 +24,7 @@ export default function Header() {
               <NavLink to="/">Main Page</NavLink>
             </li>
             <li className={css.navIcon}>
-              <NavLink to="/category">All products</NavLink>
+              <NavLink to="/products">All products</NavLink>
             </li>
             <li className={css.navIcon}>
               <NavLink to="/sales">All sales</NavLink>

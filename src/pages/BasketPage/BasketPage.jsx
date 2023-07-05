@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from 'components/Section/Section';
-import css from './Basket.module.css';
+import css from './BasketPage.module.css';
 
 export default function Basket() {
   return (

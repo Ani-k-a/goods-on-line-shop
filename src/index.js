@@ -4,16 +4,17 @@ import { App } from 'components/App';
 import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Suspense } from 'react';
-import Catalog from 'pages/Catalog/Catalog';
-import Basket from 'pages/Basket/Basket';
-import Sales from 'pages/Sales/Sales';
-import Home from 'pages/Home/Home';
+import CatalogPage from 'pages/CatalogPage/Catalog';
+import BasketPage from 'pages/BasketPage/BasketPage';
+import SalesPage from 'pages/SalesPage/SalesPage';
+import HomePage from 'pages/HomePage/HomePage';
 import Loader from 'components/Loader/Loader';
-import ErrorViev from 'components/ErrorViev/ErrorViev';
+import ErrorVievPage from 'pages/ErrorVievPage/ErrorVievPage';
 import AllItemsPage from 'pages/AllItemsPage/AllItemsPage';
 import SingleItemPage from 'pages/SingleItemPage/SingleItemPage';
-import ItemsFromCategory from 'pages/ItemsFromCategory/ItemsFromCategory';
-
+import ItemsFromCategoryPage from 'pages/ItemsFromCategoryPage/ItemsFromCategoryPage';
+import { store } from 'redux/store';
+import { Provider } from 'react-redux';
 
 const router = createBrowserRouter([
   {
@@ -23,19 +24,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: '/category',
-        element: <Catalog />,
+        element: <CatalogPage />,
       },
       {
         path: '/basket',
-        element: <Basket />,
+        element: <BasketPage />,
       },
       {
         path: '/sales',
-        element: <Sales />,
+        element: <SalesPage />,
       },
       {
         path: '/products',
@@ -47,11 +48,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/category/:id',
-        element: <ItemsFromCategory />,
+        element: <ItemsFromCategoryPage />,
       },
       {
         path: '/*',
-        element: <ErrorViev />,
+        element: <ErrorVievPage />,
       },
 
     ],
@@ -63,7 +64,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router}>
       <Suspense fallback={<Loader />}>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </Suspense>
     </RouterProvider>
   </React.StrictMode>
