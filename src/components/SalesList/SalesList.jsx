@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import css from './Sales.list.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProductsAll } from 'requests/fetchProductsList';
-import { selectFilteredProducts } from 'redux/selectors';
+import { useGetAllProductsQuery } from 'redux/productsAPI';
 import ProductItem from 'components/ProductItem/ProductItem';
+import Loader from 'components/Loader/Loader';
+import ErrorViev from 'pages/ErrorVievPage/ErrorVievPage';
 
 export default function SalesList() {
-  const dispatch = useDispatch();
-  const products = useSelector(selectFilteredProducts);
-
-  useEffect(() => {
-    dispatch(fetchProductsAll());
-    console.log(products);
-  }, []);
+  const { data = [], error, isLoading } = useGetAllProductsQuery();
 
   return (
-    <ul className={css.container}>
-      {products.map(el => {
-        return el.discont_price && <ProductItem key={el.id} {...el} />;
-      })}
-    </ul>
+    <>
+      {isLoading && <Loader />}
+      {error && <ErrorViev />}
+      {
+        <ul className={css.container}>
+          {data.map(el => {
+            return el.discont_price && <ProductItem key={el.id} {...el} />;
+          })}
+        </ul>
+      }
+    </>
   );
 }
