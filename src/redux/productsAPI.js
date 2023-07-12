@@ -17,9 +17,25 @@ export const productsApi = createApi({
         getCategoryItem: builder.query({
             query: (id) => `/categories/${id}`,
         }),
+        addPhoneNumber: builder.mutation({
+            query: (body) => ({
+                url: `/sale/send`,
+                method: 'POST',
+                body,
+            }),
+            invalidatesTags: ['PhoneNumber'],
+        }),
+        addOrder: builder.mutation({
+            query: (body) => ({
+                url: `/order/send`,
+                method: 'POST',
+                body,
+            }),
+            invalidatesTags: ['Order'],
+        })
 
     }),
 })
 
 
-export const { useGetAllProductsQuery, useGetAllCategoriesQuery, useGetProductItemQuery, useGetCategoryItemQuery } = productsApi;
+export const { useGetAllProductsQuery, useGetAllCategoriesQuery, useGetProductItemQuery, useGetCategoryItemQuery, useAddPhoneNumberMutation, useAddOrderMutation } = productsApi;

@@ -10,15 +10,16 @@ export default function ProductsList() {
 
   return (
     <>
-      {isLoading && <Loader />}
-      {error && <ErrorViev />}
-      {
+      {isLoading ? (
+        <Loader />
+      ) : (
         <ul className={css.container}>
           {data.map(el => (
             <ProductItem key={el.id} {...el} />
           ))}
         </ul>
-      }
+      )}
+      {error && <ErrorViev />}
     </>
   );
 }

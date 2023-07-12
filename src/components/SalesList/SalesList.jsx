@@ -10,15 +10,16 @@ export default function SalesList() {
 
   return (
     <>
-      {isLoading && <Loader />}
-      {error && <ErrorViev />}
-      {
+      {isLoading ? (
+        <Loader />
+      ) : (
         <ul className={css.container}>
           {data.map(el => {
             return el.discont_price && <ProductItem key={el.id} {...el} />;
           })}
         </ul>
-      }
+      )}
+      {error && <ErrorViev />}
     </>
   );
 }

@@ -9,15 +9,16 @@ export default function OffersList() {
   const { data = [], error, isLoading } = useGetAllProductsQuery();
   return (
     <>
-      {isLoading && <Loader />}
-      {error && <ErrorViev />}
-      {
+      {isLoading ? (
+        <Loader />
+      ) : (
         <ul className={css.container}>
           {data
             .filter(el => el.discont_price)
             .map((el, ind) => ind < 4 && <ProductItem key={el.id} {...el} />)}
         </ul>
-      }
+      )}
+      {error && <ErrorViev />}
     </>
   );
 }

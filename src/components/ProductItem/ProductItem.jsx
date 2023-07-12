@@ -1,11 +1,18 @@
 import React from 'react';
 import css from './ProductItem.module.css';
+import { NavLink } from 'react-router-dom';
 
-export default function ProductItem({ image, title, price, discont_price }) {
+export default function ProductItem({
+  image,
+  title,
+  price,
+  discont_price,
+  id,
+}) {
   const discount = () =>
     discont_price && Math.round((price / discont_price - 1) * 100);
   return (
-    <li>
+    <li className={css.block}>
       <div className={css.imgBox}>
         <img
           className={css.img}
@@ -26,8 +33,9 @@ export default function ProductItem({ image, title, price, discont_price }) {
           </>
         )}
       </div>
-
-      <h3 className={css.title}>{title}</h3>
+      <NavLink to={`/products/${id}`}>
+        <h3 className={css.title}>{title}</h3>
+      </NavLink>
     </li>
   );
 }

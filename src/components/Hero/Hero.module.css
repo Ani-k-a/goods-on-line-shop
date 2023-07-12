@@ -45,13 +45,12 @@
   flex-direction: column;
 }
 
-.img {
-  margin-top: -200px;
-}
-
 @media screen and (min-width: 1440px) {
   .backgroundImage {
     justify-content: space-between;
     flex-direction: row;
+  }
+  .img {
+    margin-top: -200px;
   }
 }

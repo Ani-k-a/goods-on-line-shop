@@ -1,22 +1,20 @@
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 44px;
 }
 
-@media screen and (min-width: 480px) {
-  .container {
-    width: 480px;
-  }
-}
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 44px 56px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
-    width: 1440px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 }

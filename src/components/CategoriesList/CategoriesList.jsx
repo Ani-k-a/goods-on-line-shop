@@ -6,19 +6,20 @@ import { useGetAllCategoriesQuery } from 'redux/productsAPI';
 import CategoriesItem from 'components/CategoriesItem/CategoriesItem';
 
 export default function CategoriesList() {
-  const { data = [], error, isLoading } = useGetAllCategoriesQuery();
+  const { data, error, isLoading } = useGetAllCategoriesQuery();
 
   return (
     <>
-      {isLoading && <Loader />}
-      {error && <ErrorViev />}
-      {
+      {isLoading ? (
+        <Loader />
+      ) : (
         <ul className={css.container}>
           {data.map(el => (
             <CategoriesItem key={el.id} {...el} />
           ))}
         </ul>
-      }
+      )}
+      {error && <ErrorViev />}
     </>
   );
 }

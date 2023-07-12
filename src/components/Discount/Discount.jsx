@@ -2,6 +2,7 @@ import React from 'react';
 import css from './Discount.module.css';
 import gnome from '../../images/gnome.png';
 import Section from 'components/Section/Section';
+import DiscountForm from 'components/DiscountForm/DiscountForm';
 
 export default function Discount() {
   return (
@@ -15,6 +16,7 @@ export default function Discount() {
           <div className={css.offer}>
             <h3 className={css.title}>5% off</h3>
             <p className={css.description}>on the first order</p>
+            <DiscountForm></DiscountForm>
           </div>
         </div>
       </Section>

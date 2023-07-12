@@ -1,3 +1,8 @@
+.block:hover,
+.block:focus {
+  transform: scale(1.1);
+  transition-duration: 500ms;
+}
 .img {
   margin-bottom: 20px;
   width: 318px;
