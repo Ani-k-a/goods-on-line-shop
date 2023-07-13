@@ -5,7 +5,13 @@
 }
 .img {
   margin-bottom: 20px;
-  width: 318px;
-  height: 350px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 768px) {
+  .img {
+    width: 318px;
+    height: 350px;
+    object-fit: cover;
+  }
 }

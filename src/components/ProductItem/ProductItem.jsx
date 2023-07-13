@@ -8,6 +8,7 @@ export default function ProductItem({
   price,
   discont_price,
   id,
+  addtoBasketHandler,
 }) {
   const discount = () =>
     discont_price && Math.round((price / discont_price - 1) * 100);
@@ -33,6 +34,7 @@ export default function ProductItem({
           </>
         )}
       </div>
+      <button onClick={addtoBasketHandler}>Add to basket</button>
       <NavLink to={`/products/${id}`}>
         <h3 className={css.title}>{title}</h3>
       </NavLink>

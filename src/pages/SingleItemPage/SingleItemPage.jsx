@@ -4,14 +4,29 @@ import Loader from 'components/Loader/Loader';
 import ErrorViev from 'pages/ErrorVievPage/ErrorVievPage';
 import { useParams } from 'react-router-dom';
 import { useGetProductItemQuery } from 'redux/productsAPI';
+import { useDispatch } from 'react-redux';
+import {
+  addProductToBasket,
+  countTotalPrice,
+  countTotalProducts,
+} from 'redux/basketSlice';
 
 export default function SingleItemPage() {
   const { id } = useParams();
 
   const { data, error, isLoading } = useGetProductItemQuery(id);
-  // console.log(data);
+
   const dates = data && data[0];
   console.log(dates);
+
+  const dispatch = useDispatch();
+
+  const addToBasketHandler = (event, el) => {
+    event.preventDefault();
+    dispatch(addProductToBasket(el));
+    dispatch(countTotalPrice());
+    dispatch(countTotalProducts());
+  };
 
   return (
     <>

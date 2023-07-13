@@ -1,19 +1,38 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import css from './DiscountForm.module.css';
-import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
+import Notiflix from 'notiflix';
+import { useAddPhoneNumberMutation } from 'redux/productsAPI';
+import { current } from '@reduxjs/toolkit';
+
+//дописать отправки телефона
 
 export default function DiscountForm() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const onSubmit = data => console.log(data);
+  const [addPhoneNumber] = useAddPhoneNumberMutation();
 
-  console.log(watch('example'));
+  const onSubmit = data => {
+    addPhoneNumber(data);
+    reset(
+      {
+        phone: '',
+      },
+      {
+        keepErrors: true,
+        keepDirty: true,
+      }
+    );
+    Notiflix.Notify.success(
+      'Thank you. Wait for a message with a discount code.'
+    );
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
       <input
