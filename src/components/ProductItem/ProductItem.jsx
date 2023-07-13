@@ -20,6 +20,9 @@ export default function ProductItem({
           src={`http://localhost:3333${image}`}
           alt={title}
         ></img>
+        <button onClick={addtoBasketHandler} className={css.button}>
+          Add to basket
+        </button>
       </div>
       <div className={css.priceBlock}>
         {discont_price !== null ? (
@@ -34,7 +37,6 @@ export default function ProductItem({
           </>
         )}
       </div>
-      <button onClick={addtoBasketHandler}>Add to basket</button>
       <NavLink to={`/products/${id}`}>
         <h3 className={css.title}>{title}</h3>
       </NavLink>
