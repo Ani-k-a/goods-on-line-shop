@@ -21,12 +21,12 @@ export default function SingleItemPage() {
 
   const dispatch = useDispatch();
 
-  const addToBasketHandler = (event, el) => {
-    event.preventDefault();
-    dispatch(addProductToBasket(el));
-    dispatch(countTotalPrice());
-    dispatch(countTotalProducts());
-  };
+  // const addToBasketHandler = (event, el) => {
+  //   event.preventDefault();
+  //   dispatch(addProductToBasket(el));
+  //   dispatch(countTotalPrice());
+  //   dispatch(countTotalProducts());
+  // };
 
   return (
     <>

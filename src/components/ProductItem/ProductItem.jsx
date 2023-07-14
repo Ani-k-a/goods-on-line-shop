@@ -1,6 +1,11 @@
 import React from 'react';
 import css from './ProductItem.module.css';
-import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {
+  addProductToBasket,
+  countTotalPrice,
+  countTotalProducts,
+} from 'redux/basketSlice';
 
 export default function ProductItem({
   image,
@@ -12,6 +17,16 @@ export default function ProductItem({
 }) {
   const discount = () =>
     discont_price && Math.round((price / discont_price - 1) * 100);
+
+  const dispatch = useDispatch();
+
+  // const addToBasketHandler = (event, el) => {
+  //   event.preventDefault();
+  //   dispatch(addProductToBasket(el));
+  //   dispatch(countTotalPrice());
+  //   dispatch(countTotalProducts());
+  // };
+
   return (
     <li className={css.block}>
       <div className={css.imgBox}>
@@ -21,7 +36,7 @@ export default function ProductItem({
           alt={title}
         ></img>
         <button onClick={addtoBasketHandler} className={css.button}>
-          Add to basket
+          Add to cart
         </button>
       </div>
       <div className={css.priceBlock}>
@@ -37,9 +52,8 @@ export default function ProductItem({
           </>
         )}
       </div>
-      <NavLink to={`/products/${id}`}>
-        <h3 className={css.title}>{title}</h3>
-      </NavLink>
+
+      <h3 className={css.title}>{title}</h3>
     </li>
   );
 }

@@ -7,7 +7,7 @@ import ProductItem from 'components/ProductItem/ProductItem';
 import { useParams } from 'react-router-dom';
 import { useGetCategoryItemQuery } from 'redux/productsAPI';
 
-export default function ItemsFromCategory() {
+export default function ItemsFromCategory({ getCategoty }) {
   const { id } = useParams();
   const { data, error, isLoading } = useGetCategoryItemQuery(id);
 

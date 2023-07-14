@@ -4,9 +4,12 @@ import { useGetAllProductsQuery } from 'redux/productsAPI';
 import ProductItem from 'components/ProductItem/ProductItem';
 import Loader from 'components/Loader/Loader';
 import ErrorViev from 'pages/ErrorVievPage/ErrorVievPage';
+import { NavLink } from 'react-router-dom';
 
 export default function OffersList() {
   const { data = [], error, isLoading } = useGetAllProductsQuery();
+
+  const addToBasketHandler = (event, el) => {};
   return (
     <>
       {isLoading ? (
@@ -15,7 +18,19 @@ export default function OffersList() {
         <ul className={css.container}>
           {data
             .filter(el => el.discont_price)
-            .map((el, ind) => ind < 4 && <ProductItem key={el.id} {...el} />)}
+            .map(
+              (el, ind) =>
+                ind < 4 && (
+                  <NavLink to={`/products/${el.id}`} key={el.id}>
+                    <ProductItem
+                      {...el}
+                      addtoBasketHandler={event =>
+                        addToBasketHandler(event, el)
+                      }
+                    />
+                  </NavLink>
+                )
+            )}
         </ul>
       )}
       {error && <ErrorViev />}
