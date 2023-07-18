@@ -1,3 +1,6 @@
+.container {
+  gap: 52px;
+}
 .title {
   color: #000;
   font-size: 40px;

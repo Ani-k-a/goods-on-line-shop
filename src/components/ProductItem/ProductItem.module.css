@@ -1,6 +1,6 @@
 .block:hover,
 .block:focus {
-  transform: scale(1.1);
+  transform: scale(1.01);
   transition-duration: 500ms;
 }
 .imgBox {
@@ -44,7 +44,6 @@
 }
 
 .button {
-  display: none;
   position: absolute;
   top: 70%;
   left: 5%;
@@ -61,5 +60,8 @@
 @media screen and (min-width: 768px) {
   .imgBox {
     height: 300px;
+  }
+  .button {
+    display: none;
   }
 }

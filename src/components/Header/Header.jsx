@@ -30,7 +30,7 @@ export default function Header() {
               <NavLink to="/sales">All sales</NavLink>
             </li>
           </ul>
-          <NavLink to="/basket">
+          <NavLink to="/cart">
             <SlHandbag className={css.bag} />
           </NavLink>
         </div>

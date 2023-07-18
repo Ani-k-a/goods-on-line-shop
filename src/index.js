@@ -5,7 +5,7 @@ import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Suspense } from 'react';
 import CatalogPage from 'pages/CatalogPage/Catalog';
-import BasketPage from 'pages/BasketPage/BasketPage';
+import CartPage from 'pages/CartPage/CartPage';
 import SalesPage from 'pages/SalesPage/SalesPage';
 import HomePage from 'pages/HomePage/HomePage';
 import Loader from 'components/Loader/Loader';
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
         element: <CatalogPage />,
       },
       {
-        path: '/basket',
-        element: <BasketPage />,
+        path: '/cart',
+        element: <CartPage />,
       },
       {
         path: '/sales',

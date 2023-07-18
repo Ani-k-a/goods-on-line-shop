@@ -6,10 +6,10 @@ import { useParams } from 'react-router-dom';
 import { useGetProductItemQuery } from 'redux/productsAPI';
 import { useDispatch } from 'react-redux';
 import {
-  addProductToBasket,
+  addProductTocart,
   countTotalPrice,
   countTotalProducts,
-} from 'redux/basketSlice';
+} from 'redux/cartSlice';
 
 export default function SingleItemPage() {
   const { id } = useParams();
@@ -21,9 +21,9 @@ export default function SingleItemPage() {
 
   const dispatch = useDispatch();
 
-  // const addToBasketHandler = (event, el) => {
+  // const addTocartHandler = (event, el) => {
   //   event.preventDefault();
-  //   dispatch(addProductToBasket(el));
+  //   dispatch(addProductTocart(el));
   //   dispatch(countTotalPrice());
   //   dispatch(countTotalProducts());
   // };

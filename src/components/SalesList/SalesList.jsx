@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function SalesList() {
   const { data = [], error, isLoading } = useGetAllProductsQuery();
-  const addToBasketHandler = (event, el) => {};
+  const addTocartHandler = (event, el) => {};
 
   return (
     <>
@@ -22,7 +22,7 @@ export default function SalesList() {
                 <NavLink to={`/products/${el.id}`} key={el.id}>
                   <ProductItem
                     {...el}
-                    addtoBasketHandler={event => addToBasketHandler(event, el)}
+                    addtocartHandler={event => addTocartHandler(event, el)}
                   />
                 </NavLink>
               )

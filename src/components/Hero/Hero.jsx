@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './Hero.module.css';
 import Section from 'components/Section/Section';
-import img from '../../images/bg-image.png';
+import img from '../../images/png.png';
 import { NavLink } from 'react-router-dom';
 
 export default function Hero() {
@@ -12,7 +12,7 @@ export default function Hero() {
           <h1 className={css.visuallyHidden}>
             We are offering the best green products
           </h1>
-          <div>
+          <div className={css.descriptionContainer}>
             <h2 className={css.title}>Sale</h2>
             <p className={css.description}>New season</p>
             <NavLink to="/sales" className={css.link}>

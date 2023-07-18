@@ -1,6 +1,6 @@
 .block:hover,
 .block:focus {
-  transform: scale(1.1);
+  transform: scale(1.01);
   transition-duration: 500ms;
 }
 .img {

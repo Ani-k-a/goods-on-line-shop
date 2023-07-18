@@ -1,12 +1,12 @@
 import React from 'react';
 import Section from 'components/Section/Section';
-import css from './BasketPage.module.css';
+import css from './CartPage.module.css';
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowForward } from 'react-icons/io';
-import OrderDetails from 'components/OrderDetails/OrderDetails';
-import OrderList from 'components/OrderList/OrderList';
+import CartDetails from 'components/CartDetails/CartDetails';
+import CartList from 'components/CartList/CartList';
 
-export default function Basket() {
+export default function cart() {
   return (
     <Section>
       <div className={css.block}>
@@ -16,8 +16,8 @@ export default function Basket() {
           <IoIosArrowForward className={css.arrow}></IoIosArrowForward>
         </NavLink>
         <div className={css.container}>
-          <OrderList></OrderList>
-          <OrderDetails></OrderDetails>
+          <CartList></CartList>
+          <CartDetails></CartDetails>
         </div>
       </div>
     </Section>

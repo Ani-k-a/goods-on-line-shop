@@ -6,10 +6,10 @@ import Loader from 'components/Loader/Loader';
 import ErrorViev from 'pages/ErrorVievPage/ErrorVievPage';
 import { NavLink } from 'react-router-dom';
 import {
-  addProductToBasket,
+  addProductToCard,
   countTotalPrice,
-  countTotalProducts,
-} from 'redux/basketSlice';
+  countTotalQuantity,
+} from 'redux/cartSlice';
 import { useDispatch } from 'react-redux';
 
 export default function ProductsList() {
@@ -17,11 +17,11 @@ export default function ProductsList() {
 
   const dispatch = useDispatch();
 
-  const addToBasketHandler = (event, el) => {
+  const addTocartHandler = (event, el) => {
     event.preventDefault();
-    dispatch(addProductToBasket(el));
+    dispatch(addProductToCard(el));
     dispatch(countTotalPrice());
-    dispatch(countTotalProducts());
+    dispatch(countTotalQuantity());
   };
 
   return (
@@ -34,7 +34,7 @@ export default function ProductsList() {
             <NavLink to={`/products/${el.id}`} key={el.id}>
               <ProductItem
                 {...el}
-                addtoBasketHandler={event => addToBasketHandler(event, el)}
+                addtocartHandler={event => addTocartHandler(event, el)}
               />
             </NavLink>
           ))}

@@ -3,11 +3,12 @@ import React from 'react';
 import Filter from 'components/Filter/Filter';
 import SalesList from 'components/SalesList/SalesList';
 import css from './SalesPage.module.css';
+import Title from 'components/Title/Title';
 
 export default function Sales() {
   return (
     <Section>
-      <h1 className={css.title}>Products with sale</h1>
+     <Title title='Products with sale'></Title>
       <Filter></Filter>
       <SalesList />
     </Section>

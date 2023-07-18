@@ -17,13 +17,11 @@ export default function Contacts() {
           <li className={css.contactItem}>
             <a href="https://www.instagram.com/">
               <PiInstagramLogoThin className={css.contactLogo} />
-              Instagram
             </a>
           </li>
           <li className={css.contactItem}>
             <a href="https://www.whatsapp.com/">
               <PiWhatsappLogoThin className={css.contactLogo} />
-              WhatsApp
             </a>
           </li>
         </ul>

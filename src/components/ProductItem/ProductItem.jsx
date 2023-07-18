@@ -2,10 +2,10 @@ import React from 'react';
 import css from './ProductItem.module.css';
 import { useDispatch } from 'react-redux';
 import {
-  addProductToBasket,
+  addProductTocart,
   countTotalPrice,
   countTotalProducts,
-} from 'redux/basketSlice';
+} from 'redux/cartSlice';
 
 export default function ProductItem({
   image,
@@ -13,18 +13,14 @@ export default function ProductItem({
   price,
   discont_price,
   id,
-  addtoBasketHandler,
+  addtocartHandler,
 }) {
   const discount = () =>
     discont_price && Math.round((price / discont_price - 1) * 100);
 
   const dispatch = useDispatch();
 
-  // const addToBasketHandler = (event, el) => {
-  //   event.preventDefault();
-  //   dispatch(addProductToBasket(el));
-  //   dispatch(countTotalPrice());
-  //   dispatch(countTotalProducts());
+  // const addTocartHandler = (event, el) => {
   // };
 
   return (
@@ -35,7 +31,7 @@ export default function ProductItem({
           src={`http://localhost:3333${image}`}
           alt={title}
         ></img>
-        <button onClick={addtoBasketHandler} className={css.button}>
+        <button onClick={addtocartHandler} className={css.button}>
           Add to cart
         </button>
       </div>
@@ -52,7 +48,6 @@ export default function ProductItem({
           </>
         )}
       </div>
-
       <h3 className={css.title}>{title}</h3>
     </li>
   );

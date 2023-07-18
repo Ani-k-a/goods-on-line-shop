@@ -13,9 +13,7 @@
 
 .hero {
   background-color: #a1e2eb;
-  margin-left: -30px;
-  margin-right: -30px;
-  padding: 100px 0px 0px 50px;
+  /* padding: 100px 0px 0px 50px; */
 }
 
 .title {
@@ -44,6 +42,13 @@
   justify-content: space-between;
   flex-direction: column;
 }
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+}
 
 @media screen and (min-width: 1440px) {
   .backgroundImage {
@@ -51,6 +56,9 @@
     flex-direction: row;
   }
   .img {
-    margin-top: -200px;
+    width: 50%;
+  }
+  .descriptionContainer {
+    padding: 80px 0px;
   }
 }

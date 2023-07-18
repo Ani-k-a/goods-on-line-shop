@@ -6,13 +6,14 @@ import Filter from 'components/Filter/Filter';
 import ProductItem from 'components/ProductItem/ProductItem';
 import { useParams } from 'react-router-dom';
 import { useGetCategoryItemQuery } from 'redux/productsAPI';
+import Title from 'components/Title/Title';
 
 export default function ItemsFromCategory({ getCategoty }) {
   const { id } = useParams();
   const { data, error, isLoading } = useGetCategoryItemQuery(id);
 
   const dates = data && data.data;
-  console.log(dates);
+  console.log(data);
 
   return (
     <>
@@ -20,7 +21,7 @@ export default function ItemsFromCategory({ getCategoty }) {
         <Loader />
       ) : (
         <Section>
-          <h1 className={css.title}>Here mast be a category</h1>
+          <Title title={data.category.title}></Title>
           <Filter></Filter>
           <ul className={css.container}>
             {dates.map(el => (
