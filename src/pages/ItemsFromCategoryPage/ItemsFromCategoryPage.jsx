@@ -7,14 +7,15 @@ import ProductItem from 'components/ProductItem/ProductItem';
 import { useParams } from 'react-router-dom';
 import { useGetCategoryItemQuery } from 'redux/productsAPI';
 import Title from 'components/Title/Title';
+import { addToCartHandler } from 'js/addToCartHandler';
+import { useDispatch } from 'react-redux';
 
-export default function ItemsFromCategory({ getCategoty }) {
+export default function ItemsFromCategory() {
   const { id } = useParams();
   const { data, error, isLoading } = useGetCategoryItemQuery(id);
 
   const dates = data && data.data;
-  console.log(data);
-
+  const dispatch = useDispatch();
   return (
     <>
       {isLoading ? (
@@ -25,7 +26,13 @@ export default function ItemsFromCategory({ getCategoty }) {
           <Filter></Filter>
           <ul className={css.container}>
             {dates.map(el => (
-              <ProductItem key={el.id} {...el} />
+              <ProductItem
+                key={el.id}
+                {...el}
+                addtoCartHandler={event =>
+                  addToCartHandler(event, el, dispatch)
+                }
+              />
             ))}
           </ul>
         </Section>

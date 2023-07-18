@@ -1,15 +1,10 @@
-import React from 'react';
 import css from './SingleItemPage.module.css';
 import Loader from 'components/Loader/Loader';
 import ErrorViev from 'pages/ErrorVievPage/ErrorVievPage';
 import { useParams } from 'react-router-dom';
 import { useGetProductItemQuery } from 'redux/productsAPI';
 import { useDispatch } from 'react-redux';
-import {
-  addProductTocart,
-  countTotalPrice,
-  countTotalProducts,
-} from 'redux/cartSlice';
+import { addToCartHandler } from 'js/addToCartHandler';
 
 export default function SingleItemPage() {
   const { id } = useParams();
@@ -17,16 +12,8 @@ export default function SingleItemPage() {
   const { data, error, isLoading } = useGetProductItemQuery(id);
 
   const dates = data && data[0];
-  console.log(dates);
 
   const dispatch = useDispatch();
-
-  // const addTocartHandler = (event, el) => {
-  //   event.preventDefault();
-  //   dispatch(addProductTocart(el));
-  //   dispatch(countTotalPrice());
-  //   dispatch(countTotalProducts());
-  // };
 
   return (
     <>
@@ -68,7 +55,12 @@ export default function SingleItemPage() {
                     </>
                   )}
                 </div>
-                <button className={css.button}>To cart</button>
+                <button
+                  className={css.button}
+                  onClick={event => addToCartHandler(event, dates, dispatch)}
+                >
+                  To cart
+                </button>
                 <div className={css.descriptionBlock}>
                   <p className={css.descriptionTitle}>Description</p>
                   <p>{dates.description}</p>

@@ -5,10 +5,13 @@ import ProductItem from 'components/ProductItem/ProductItem';
 import Loader from 'components/Loader/Loader';
 import ErrorViev from 'pages/ErrorVievPage/ErrorVievPage';
 import { NavLink } from 'react-router-dom';
+import { addToCartHandler } from 'js/addToCartHandler';
+import { useDispatch } from 'react-redux';
 
 export default function SalesList() {
   const { data = [], error, isLoading } = useGetAllProductsQuery();
-  const addTocartHandler = (event, el) => {};
+
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -22,7 +25,9 @@ export default function SalesList() {
                 <NavLink to={`/products/${el.id}`} key={el.id}>
                   <ProductItem
                     {...el}
-                    addtocartHandler={event => addTocartHandler(event, el)}
+                    addtoCartHandler={event =>
+                      addToCartHandler(event, el, dispatch)
+                    }
                   />
                 </NavLink>
               )

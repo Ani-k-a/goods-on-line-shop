@@ -4,8 +4,11 @@ import css from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import { SlHandbag } from 'react-icons/sl';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
+  const totalQuantity = useSelector(state => state.cart.totalQuantity);
+
   return (
     <header>
       <Section>
@@ -30,8 +33,9 @@ export default function Header() {
               <NavLink to="/sales">All sales</NavLink>
             </li>
           </ul>
-          <NavLink to="/cart">
-            <SlHandbag className={css.bag} />
+          <NavLink to="/cart" className={css.cartLink}>
+            <SlHandbag className={css.bag}></SlHandbag>
+            <span className={css.quantity}>{totalQuantity}</span>
           </NavLink>
         </div>
       </Section>

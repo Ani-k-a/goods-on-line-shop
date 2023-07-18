@@ -1,11 +1,4 @@
-import React from 'react';
 import css from './ProductItem.module.css';
-import { useDispatch } from 'react-redux';
-import {
-  addProductTocart,
-  countTotalPrice,
-  countTotalProducts,
-} from 'redux/cartSlice';
 
 export default function ProductItem({
   image,
@@ -13,15 +6,10 @@ export default function ProductItem({
   price,
   discont_price,
   id,
-  addtocartHandler,
+  addtoCartHandler,
 }) {
   const discount = () =>
     discont_price && Math.round((price / discont_price - 1) * 100);
-
-  const dispatch = useDispatch();
-
-  // const addTocartHandler = (event, el) => {
-  // };
 
   return (
     <li className={css.block}>
@@ -31,7 +19,7 @@ export default function ProductItem({
           src={`http://localhost:3333${image}`}
           alt={title}
         ></img>
-        <button onClick={addtocartHandler} className={css.button}>
+        <button onClick={addtoCartHandler} className={css.button}>
           Add to cart
         </button>
       </div>

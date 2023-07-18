@@ -31,7 +31,7 @@
 }
 
 .bag {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .bag:hover,
@@ -43,4 +43,13 @@
   .navList {
     display: none;
   }
+}
+.cartLink {
+  position: relative;
+}
+.quantity {
+  position: absolute;
+  bottom: 7px;
+  left: 14px;
+  font-size: 14px;
 }

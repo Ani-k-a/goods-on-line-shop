@@ -1,10 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { IoMdClose } from 'react-icons/io';
 import css from './CartItem.module.css';
-import { addProductToCard } from 'redux/cartSlice';
+import { addProductToCart, decreaseProduct } from 'redux/cartSlice';
+import { useDispatch } from 'react-redux';
 
-export default function cartItem({
+export default function CartItem({
   title,
   image,
   price,
@@ -12,7 +12,7 @@ export default function cartItem({
   quantity,
   id,
 }) {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <li className={css.item}>
@@ -25,11 +25,16 @@ export default function cartItem({
         <div className={css.info}>
           <p className={css.title}>{title}</p>
           <div className={css.buttons}>
-            <button className={css.btn}>-</button>
+            <button
+              className={css.btn}
+              onClick={() => dispatch(decreaseProduct({ id }))}
+            >
+              -
+            </button>
             <p className={css.quantity}>{quantity}</p>
             <button
               className={css.btn}
-              // onClick={dispatch(addProductToCard(id))}
+              onClick={() => dispatch(addProductToCart({ id }))}
             >
               +
             </button>
