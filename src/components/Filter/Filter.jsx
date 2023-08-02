@@ -33,8 +33,9 @@ export default function Filter({ products, setFilteredProducts }) {
   return (
     <div className={css.container}>
       <div>
-        <label>Price</label>
+        <label className={css.lable}>Price</label>
         <input
+          className={css.inputFrom}
           type="number"
           value={fromPrice}
           placeholder="from"
@@ -42,29 +43,40 @@ export default function Filter({ products, setFilteredProducts }) {
           onChange={ev => setFromPrice(ev.target.value)}
         ></input>
         <input
+          className={css.inputTo}
           type="number"
           value={toPrice}
           placeholder="to"
+          min="1"
           onChange={ev => setToPrice(ev.target.value)}
         ></input>
       </div>
-      <div>
-        <label>Discounted items</label>
+      <div className={css.checkboxBlock}>
+        <label className={css.lableCheckbox} htmlFor="checkbox">
+          Discounted items
+        </label>
         <input
+          className={css.customCheckbox}
           type="checkbox"
+          name="checkbox"
           value={discountedOnly}
           onChange={ev => setDiscountedOnly(ev.target.checked)}
         ></input>
       </div>
       <div>
-        <label>Sorted</label>
+        <label className={css.lable}>Sorted</label>
         <select
+          className={css.select}
           value={sortedOrder}
           onChange={ev => setSortedOrder(ev.target.value)}
         >
-          <option>by default</option>
-          <option value="asc">Acending</option>
-          <option value="des">Decending</option>
+          <option className={css.option}>by default</option>
+          <option className={css.option} value="asc">
+            acending
+          </option>
+          <option className={css.option} value="des">
+            decending
+          </option>
         </select>
       </div>
     </div>

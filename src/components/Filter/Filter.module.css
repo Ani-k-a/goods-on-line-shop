@@ -2,4 +2,74 @@
   margin-bottom: 35px;
   display: flex;
   margin-bottom: 34px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.lable {
+  margin-right: 15px;
+}
+@media screen and (max-width: 1139px) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 1140px) {
+  .container {
+    display: flex;
+    gap: 90px;
+  }
+}
+
+.select {
+  color: #797979;
+}
+.inputFrom,
+.inputTo {
+  width: 103px;
+}
+.inputFrom {
+  margin-right: 15px;
+}
+
+.inputFrom,
+.inputTo,
+.select {
+  padding: 11px;
+  border-radius: 7px;
+  border: 1px solid #000;
+}
+.checkboxBlock {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.customCheckbox {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  top: 0;
+  width: 37px;
+  height: 37px;
+}
+.lableCheckbox {
+  display: flex;
+  align-items: center;
+}
+.lableCheckbox::after {
+  content: '';
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  border-radius: 7px;
+  border: 1px solid #000;
+  margin-left: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.customCheckbox:checked + .lableCheckbox::after {
+  background-image: url('../../images/done.png');
 }
