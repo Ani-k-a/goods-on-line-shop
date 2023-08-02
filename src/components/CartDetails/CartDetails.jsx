@@ -17,8 +17,8 @@ export default function CartDetails() {
     reset,
   } = useForm();
 
-  const [addOrder, isLoading, error] = useAddOrderMutation();
-
+  const [addOrder] = useAddOrderMutation();
+  // const [addOrder, isLoading, error] = useAddOrderMutation();
   const dispatch = useDispatch();
 
   const onSubmit = data => {

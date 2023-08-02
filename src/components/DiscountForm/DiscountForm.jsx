@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import css from './DiscountForm.module.css';
 import Notiflix from 'notiflix';
 import { useAddPhoneNumberMutation } from 'redux/productsAPI';
-import { current } from '@reduxjs/toolkit';
+// import { current } from '@reduxjs/toolkit';
 
 //дописать отправки телефона
 
@@ -40,7 +40,7 @@ export default function DiscountForm() {
         {...register('phone', {
           required: true,
           patern: {
-            value: /(\(?([\d \-\)\–\+\/\(]+)\)?([ .\-–\/]?)([\d]+))/,
+            // value: /(\(?([\d \-\)\–\+\/\(]+)\)?([ .\-–\/]?)([\d]+))/,
             message: 'Invalid phone number',
           },
         })}
