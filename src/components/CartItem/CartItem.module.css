@@ -66,7 +66,9 @@
   color: #8b8b8b;
   font-size: 20px;
 }
-
+.btnDelete {
+  display: contents;
+}
 .close {
   color: #000000;
   font-size: 30px;

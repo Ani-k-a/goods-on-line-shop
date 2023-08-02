@@ -75,7 +75,7 @@ export default function CartItem({
           )}
         </div>
       </div>
-      <button onClick={() => deleteProducts()}>
+      <button onClick={() => deleteProducts()} className={css.btnDelete}>
         <IoMdClose className={css.close}></IoMdClose>
       </button>
     </li>

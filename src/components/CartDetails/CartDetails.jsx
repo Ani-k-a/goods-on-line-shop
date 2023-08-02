@@ -51,7 +51,7 @@ export default function CartDetails() {
           {...register('phone', {
             required: true,
             patern: {
-              value: /(\(?([\d \-\)\–\+\/\(]+)\)?([ .\-–\/]?)([\d]+))/,
+              // value: /(\(?([\d \-\)\–\+\/\(]+){6,}\)?([ .\-–\/]?)([\d]+))/,
               message: 'Invalid phone number',
             },
           })}
