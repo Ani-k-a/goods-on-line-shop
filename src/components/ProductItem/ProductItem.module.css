@@ -49,11 +49,11 @@
 .button {
   position: absolute;
   top: 70%;
-  left: 5%;
+  left: 25%;
   border-radius: 21px;
   border: 2px solid #393;
   background: #f1fff1;
-  width: 279px;
+  width: 50%;
   height: 72px;
   color: #393;
   font-size: 18px;
@@ -66,5 +66,13 @@
   }
   .button {
     display: none;
+    left: 15%;
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .button {
+    left: 5%;
+    width: 279px;
   }
 }

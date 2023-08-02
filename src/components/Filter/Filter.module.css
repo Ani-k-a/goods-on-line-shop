@@ -1,37 +1,41 @@
 .container {
   margin-bottom: 35px;
   display: flex;
+  flex-direction: column;
   margin-bottom: 34px;
   color: #000;
   font-size: 20px;
   font-weight: 600;
+  gap: 15px;
 }
-
+.inputFrom,
+.inputTo {
+  width: 50px;
+}
 .lable {
   margin-right: 15px;
 }
-@media screen and (max-width: 1139px) {
-  .container {
-    flex-direction: column;
-    gap: 15px;
+.inputFrom {
+  margin-right: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .inputFrom,
+  .inputTo {
+    width: 103px;
   }
 }
-@media screen and (min-width: 1140px) {
+
+@media screen and (min-width: 1440px) {
   .container {
     display: flex;
+    flex-direction: row;
     gap: 90px;
   }
 }
 
 .select {
   color: #797979;
-}
-.inputFrom,
-.inputTo {
-  width: 103px;
-}
-.inputFrom {
-  margin-right: 15px;
 }
 
 .inputFrom,
@@ -45,14 +49,15 @@
   display: flex;
   align-items: center;
   position: relative;
+  width: 237px;
 }
 .customCheckbox {
   position: absolute;
   opacity: 0;
-  right: 0;
+  left: 198px;
   top: 0;
-  width: 37px;
-  height: 37px;
+  width: 38px;
+  height: 38px;
 }
 .lableCheckbox {
   display: flex;
@@ -70,6 +75,13 @@
   background-position: center center;
   background-size: 50% 50%;
 }
+.customCheckbox:checked {
+  width: 137px;
+  background-image: url('../../images/done.png');
+  opacity: 1;
+}
+
 .customCheckbox:checked + .lableCheckbox::after {
+  background-color: blue;
   background-image: url('../../images/done.png');
 }

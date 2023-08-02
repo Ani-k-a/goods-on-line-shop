@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import css from './Filter.module.css';
 
-export default function Filter({ products, setFilteredProducts }) {
+export default function Filter({
+  products,
+  setFilteredProducts,
+  onlySale = false,
+}) {
   const [fromPrice, setFromPrice] = useState();
   const [toPrice, setToPrice] = useState();
   const [discountedOnly, setDiscountedOnly] = useState(false);
@@ -51,18 +55,20 @@ export default function Filter({ products, setFilteredProducts }) {
           onChange={ev => setToPrice(ev.target.value)}
         ></input>
       </div>
-      <div className={css.checkboxBlock}>
-        <label className={css.lableCheckbox} htmlFor="checkbox">
-          Discounted items
-        </label>
-        <input
-          className={css.customCheckbox}
-          type="checkbox"
-          name="checkbox"
-          value={discountedOnly}
-          onChange={ev => setDiscountedOnly(ev.target.checked)}
-        ></input>
-      </div>
+      {!onlySale && (
+        <div className={css.checkboxBlock}>
+          <label className={css.lableCheckbox} htmlFor="checkbox">
+            Discounted items
+          </label>
+          <input
+            className={css.customCheckbox}
+            type="checkbox"
+            name="checkbox"
+            value={discountedOnly}
+            onChange={ev => setDiscountedOnly(ev.target.checked)}
+          ></input>
+        </div>
+      )}
       <div>
         <label className={css.lable}>Sorted</label>
         <select

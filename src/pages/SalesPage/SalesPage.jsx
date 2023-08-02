@@ -28,6 +28,7 @@ export default function SalesPage() {
           <Filter
             products={data}
             setFilteredProducts={setProductsFilteredHandler}
+            onlySale={true}
           ></Filter>
           {filteredProducts ? (
             <ProductsList data={filteredProducts} />
