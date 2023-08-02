@@ -16,6 +16,7 @@
   display: flex;
   margin-bottom: 10px;
   align-items: flex-end;
+  justify-content: space-between;
 }
 .imgBox {
   display: flex;

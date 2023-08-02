@@ -90,7 +90,10 @@
     margin-bottom: 34px;
     font-size: 36px;
   }
-  .img {
+  .imgBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 380px;
     height: 380px;
   }
@@ -107,7 +110,10 @@
   .container {
     width: 1440px;
   }
-  .img {
+  .title {
+    margin-bottom: 70px;
+  }
+  .imgBlock {
     width: 710px;
     height: 710px;
   }

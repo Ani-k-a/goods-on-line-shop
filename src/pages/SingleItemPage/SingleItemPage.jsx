@@ -24,11 +24,13 @@ export default function SingleItemPage() {
           <div className={css.container}>
             <div className={css.title}>{dates.title}</div>
             <div className={css.block}>
-              <img
-                className={css.img}
-                alt={dates.title}
-                src={`http://localhost:3333${dates.image}`}
-              ></img>
+              <div className={css.imgBlock}>
+                <img
+                  className={css.img}
+                  alt={dates.title}
+                  src={`http://greenshopbackendapi.onrender.com${dates.image}`}
+                ></img>
+              </div>
               <div className={css.descriptionBox}>
                 <div className={css.priceBlock}>
                   {dates.discont_price !== null ? (

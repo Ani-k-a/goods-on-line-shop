@@ -50,6 +50,8 @@
 .quantity {
   position: absolute;
   bottom: 7px;
-  left: 14px;
+  left: 0px;
   font-size: 14px;
+  width: 100%;
+  text-align: center;
 }

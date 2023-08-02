@@ -1,7 +1,13 @@
 import React from 'react';
 import { IoMdClose } from 'react-icons/io';
 import css from './CartItem.module.css';
-import { addProductToCart, decreaseProduct } from 'redux/cartSlice';
+import {
+  addProductToCart,
+  countTotalPrice,
+  countTotalQuantity,
+  decreaseProduct,
+  deleteProduct,
+} from 'redux/cartSlice';
 import { useDispatch } from 'react-redux';
 
 export default function CartItem({
@@ -14,28 +20,40 @@ export default function CartItem({
 }) {
   const dispatch = useDispatch();
 
+  const decreaseQuantity = () => {
+    dispatch(decreaseProduct({ id }));
+    dispatch(countTotalPrice());
+    dispatch(countTotalQuantity());
+  };
+
+  const increaseQuantity = () => {
+    dispatch(addProductToCart({ id }));
+    dispatch(countTotalPrice());
+    dispatch(countTotalQuantity());
+  };
+  const deleteProducts = () => {
+    console.log('done');
+    dispatch(deleteProduct({ id }));
+    dispatch(countTotalPrice());
+    dispatch(countTotalQuantity());
+  };
+
   return (
     <li className={css.item}>
       <img
         className={css.img}
         alt={title}
-        src={`http://localhost:3333${image}`}
+        src={`http://greenshopbackendapi.onrender.com${image}`}
       ></img>
       <div className={css.infoBox}>
         <div className={css.info}>
           <p className={css.title}>{title}</p>
           <div className={css.buttons}>
-            <button
-              className={css.btn}
-              onClick={() => dispatch(decreaseProduct({ id }))}
-            >
+            <button className={css.btn} onClick={() => decreaseQuantity()}>
               -
             </button>
             <p className={css.quantity}>{quantity}</p>
-            <button
-              className={css.btn}
-              onClick={() => dispatch(addProductToCart({ id }))}
-            >
+            <button className={css.btn} onClick={() => increaseQuantity()}>
               +
             </button>
           </div>
@@ -57,8 +75,9 @@ export default function CartItem({
           )}
         </div>
       </div>
-
-      <IoMdClose className={css.close}></IoMdClose>
+      <button onClick={() => deleteProducts()}>
+        <IoMdClose className={css.close}></IoMdClose>
+      </button>
     </li>
   );
 }

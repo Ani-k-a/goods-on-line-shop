@@ -6,7 +6,7 @@ export default function CategoriesItem({ image, title, id }) {
     <li className={css.block}>
       <NavLink to={`/category/${id}`}>
         <img
-          src={`http://localhost:3333${image}`}
+          src={`http://greenshopbackendapi.onrender.com${image}`}
           alt={title}
           className={css.img}
         ></img>
