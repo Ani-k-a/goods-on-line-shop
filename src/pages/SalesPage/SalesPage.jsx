@@ -1,16 +1,42 @@
 import Section from 'components/Section/Section';
-import React from 'react';
+import { useState } from 'react';
 import Filter from 'components/Filter/Filter';
-import SalesList from 'components/SalesList/SalesList';
-// import css from './SalesPage.module.css';
+import { useGetAllProductsQuery } from 'redux/productsAPI';
 import Title from 'components/Title/Title';
+import Loader from 'components/Loader/Loader';
+import ErrorViev from 'pages/ErrorVievPage/ErrorVievPage';
+import ProductsList from 'components/ProductsList/ProductsList';
 
-export default function Sales() {
+export default function SalesPage() {
+  const { data, error, isLoading } = useGetAllProductsQuery();
+  const [filteredProducts, setFilteredProducts] = useState();
+
+  const setProductsFilteredHandler = productsTofilter => {
+    const productsWithSaleFiltered = productsTofilter.filter(
+      el => el.discont_price
+    );
+    return setFilteredProducts(productsWithSaleFiltered);
+  };
+
   return (
     <Section>
       <Title title="Products with sale"></Title>
-      <Filter></Filter>
-      <SalesList />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <Filter
+            products={data}
+            setFilteredProducts={setProductsFilteredHandler}
+          ></Filter>
+          {filteredProducts ? (
+            <ProductsList data={filteredProducts} />
+          ) : (
+            <Loader></Loader>
+          )}
+        </>
+      )}
+      {error && <ErrorViev />}
     </Section>
   );
 }

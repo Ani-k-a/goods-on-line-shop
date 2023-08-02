@@ -18,10 +18,13 @@ export const productsApi = createApi({
             query: (id) => `/categories/${id}`,
         }),
         addPhoneNumber: builder.mutation({
-            query: (newPhone) => ({
+            query: (payload) => ({
                 url: `/sale/send`,
                 method: 'POST',
-                body: newPhone,
+                body: payload,
+                headers: {
+                    'Content-type': 'application/json',
+                }
             }),
             invalidatesTags: ['PhoneNumber'],
         }),
@@ -30,6 +33,9 @@ export const productsApi = createApi({
                 url: `/order/send`,
                 method: 'POST',
                 body,
+                headers: {
+                    'Content-type': 'application/json',
+                }
             }),
             invalidatesTags: ['Order'],
         })

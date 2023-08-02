@@ -3,9 +3,6 @@ import { useForm } from 'react-hook-form';
 import css from './DiscountForm.module.css';
 import Notiflix from 'notiflix';
 import { useAddPhoneNumberMutation } from 'redux/productsAPI';
-// import { current } from '@reduxjs/toolkit';
-
-//дописать отправки телефона
 
 export default function DiscountForm() {
   const {
@@ -15,22 +12,25 @@ export default function DiscountForm() {
     reset,
   } = useForm();
 
-  const [addPhoneNumber] = useAddPhoneNumberMutation();
+  const [addPhoneNumber, { isError, isSuccess }] = useAddPhoneNumberMutation();
 
   const onSubmit = data => {
     addPhoneNumber(data);
-    reset(
-      {
-        phone: '',
-      },
-      {
-        keepErrors: true,
-        keepDirty: true,
-      }
-    );
-    Notiflix.Notify.success(
-      'Thank you. Wait for a message with a discount code.'
-    );
+    isSuccess &&
+      reset(
+        {
+          phone: '',
+        },
+        {
+          keepErrors: true,
+          keepDirty: true,
+        }
+      ) &&
+      Notiflix.Notify.success(
+        'Thank you. Wait for a message with a discount code.'
+      );
+    isError &&
+      Notiflix.Notify.info('Something is going wromg. Please tru again.');
   };
 
   return (

@@ -23,7 +23,6 @@ export default function CartDetails() {
 
   const onSubmit = data => {
     addOrder({ ...data, ...totalOrder }) && dispatch(deleteProducts());
-    // dispatch(deleteProducts());
     reset(
       {
         phone: '',
@@ -55,7 +54,7 @@ export default function CartDetails() {
               message: 'Invalid phone number',
             },
           })}
-          placeholder="+49"
+          placeholder="Phone number"
         />
         {errors.phone && <span className={css.alarm}>Enter your number</span>}
 
