@@ -16,7 +16,7 @@ export default function ProductItem({
       <div className={css.imgBox}>
         <img
           className={css.img}
-          src={`http://greenshopbackendapi.onrender.com${image}`}
+          src={`https://greenshopbackendapi.onrender.com${image}`}
           alt={title}
         ></img>
         <button onClick={addtoCartHandler} className={css.button}>
