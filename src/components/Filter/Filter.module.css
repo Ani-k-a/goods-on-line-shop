@@ -75,13 +75,8 @@
   background-position: center center;
   background-size: 50% 50%;
 }
-.customCheckbox:checked {
-  width: 137px;
-  background-image: url('../../images/done.png');
-  opacity: 1;
-}
 
 .customCheckbox:checked + .lableCheckbox::after {
-  background-color: blue;
+  background-color: rgb(224, 216, 103);
   background-image: url('../../images/done.png');
 }
