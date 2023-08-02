@@ -18,6 +18,11 @@
   margin-left: 17px;
   font-size: 17px;
 }
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 @media screen and (min-width: 1440px) {
   .container {
@@ -26,5 +31,8 @@
   }
   .link {
     justify-content: center;
+  }
+  .cartImage {
+    width: 30%;
   }
 }
