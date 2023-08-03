@@ -17,8 +17,8 @@ export default function CartDetails() {
     reset,
   } = useForm();
 
-  const [addOrder] = useAddOrderMutation();
-  // const [addOrder, isLoading, error] = useAddOrderMutation();
+  // const [addOrder] = useAddOrderMutation();
+  const [addOrder, error] = useAddOrderMutation();
   const dispatch = useDispatch();
 
   const onSubmit = data => {
@@ -33,6 +33,8 @@ export default function CartDetails() {
       }
     );
     Notiflix.Notify.success('Thank you for your order!');
+    error &&
+      Notiflix.Notify.info('Something is going wromg. Please try again.');
   };
   return (
     <div className={css.container}>
@@ -50,7 +52,7 @@ export default function CartDetails() {
           {...register('phone', {
             required: true,
             patern: {
-              // value: /(\(?([\d \-\)\–\+\/\(]+){6,}\)?([ .\-–\/]?)([\d]+))/,
+              value: /\(?\+\(?49\)?[ ()]?([- ()]?\d[- ()]?){10}/,
               message: 'Invalid phone number',
             },
           })}

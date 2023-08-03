@@ -30,7 +30,7 @@ export default function DiscountForm() {
         'Thank you. Wait for a message with a discount code.'
       );
     isError &&
-      Notiflix.Notify.info('Something is going wromg. Please tru again.');
+      Notiflix.Notify.info('Something is going wromg. Please try again.');
   };
 
   return (
@@ -40,7 +40,7 @@ export default function DiscountForm() {
         {...register('phone', {
           required: true,
           patern: {
-            // value: /(\(?([\d \-\)\–\+\/\(]+)\)?([ .\-–\/]?)([\d]+))/,
+            value: /\(?\+\(?49\)?[ ()]?([- ()]?\d[- ()]?){10}/,
             message: 'Invalid phone number',
           },
         })}

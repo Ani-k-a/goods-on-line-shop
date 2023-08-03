@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import css from './Filter.module.css';
 
 export default function Filter({
@@ -10,6 +10,10 @@ export default function Filter({
   const [toPrice, setToPrice] = useState();
   const [discountedOnly, setDiscountedOnly] = useState(false);
   const [sortedOrder, setSortedOrder] = useState();
+
+  const updateFilteredProducts = useCallback(sortedProducts => {
+    setFilteredProducts(sortedProducts);
+  }, []);
 
   useEffect(() => {
     const filteredProducts = products.filter(el => {
@@ -31,8 +35,15 @@ export default function Filter({
         return 0;
       }
     });
-    setFilteredProducts(sortedProducts);
-  }, [fromPrice, toPrice, discountedOnly, sortedOrder, products]);
+    updateFilteredProducts(sortedProducts);
+  }, [
+    fromPrice,
+    toPrice,
+    discountedOnly,
+    sortedOrder,
+    products,
+    updateFilteredProducts,
+  ]);
 
   return (
     <div className={css.container}>
