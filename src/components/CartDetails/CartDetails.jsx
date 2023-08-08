@@ -18,23 +18,26 @@ export default function CartDetails() {
   } = useForm();
 
   // const [addOrder] = useAddOrderMutation();
-  const [addOrder, error] = useAddOrderMutation();
+  const [addOrder, { isError, isSuccess }] = useAddOrderMutation();
   const dispatch = useDispatch();
 
   const onSubmit = data => {
     addOrder({ ...data, ...totalOrder }) && dispatch(deleteProducts());
-    reset(
-      {
-        phone: '',
-      },
-      {
-        keepErrors: true,
-        keepDirty: true,
-      }
-    );
-    Notiflix.Notify.success('Thank you for your order!');
-    error &&
+    if (isSuccess) {
+      reset(
+        {
+          phone: '',
+        },
+        {
+          keepErrors: true,
+          keepDirty: true,
+        }
+      );
+      Notiflix.Notify.success('Thank you for your order!');
+    }
+    if (isError) {
       Notiflix.Notify.info('Something is going wromg. Please try again.');
+    }
   };
   return (
     <div className={css.container}>
@@ -51,7 +54,7 @@ export default function CartDetails() {
           className={css.input}
           {...register('phone', {
             required: true,
-            patern: {
+            pattern: {
               value: /\(?\+\(?49\)?[ ()]?([- ()]?\d[- ()]?){10}/,
               message: 'Invalid phone number',
             },

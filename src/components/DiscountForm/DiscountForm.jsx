@@ -16,7 +16,7 @@ export default function DiscountForm() {
 
   const onSubmit = data => {
     addPhoneNumber(data);
-    isSuccess &&
+    if (isSuccess) {
       reset(
         {
           phone: '',
@@ -25,21 +25,24 @@ export default function DiscountForm() {
           keepErrors: true,
           keepDirty: true,
         }
-      ) &&
+      );
       Notiflix.Notify.success(
         'Thank you. Wait for a message with a discount code.'
       );
-    isError &&
+    }
+    if (isError) {
       Notiflix.Notify.info('Something is going wromg. Please try again.');
+    }
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
       <input
+        type="tel"
         className={css.input}
         {...register('phone', {
           required: true,
-          patern: {
+          pattern: {
             value: /\(?\+\(?49\)?[ ()]?([- ()]?\d[- ()]?){10}/,
             message: 'Invalid phone number',
           },
