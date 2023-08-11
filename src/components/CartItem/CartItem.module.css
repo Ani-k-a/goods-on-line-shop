@@ -113,7 +113,7 @@
     margin-bottom: 0px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   .priceBlock {
     width: 205px;
     margin-right: 36px;

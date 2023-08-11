@@ -7,8 +7,8 @@ import Notiflix from 'notiflix';
 import { deleteProducts } from 'redux/cartSlice';
 
 export default function CartDetails() {
-  const totalPrice = useSelector(state => state.cart.totalPrice);
-  const totalOrder = useSelector(state => state.cart);
+  const totalPrice = useSelector(state => state.allReducer.cart.totalPrice);
+  const totalOrder = useSelector(state => state.allReducer.cart);
 
   const {
     register,
@@ -17,7 +17,6 @@ export default function CartDetails() {
     reset,
   } = useForm();
 
-  // const [addOrder] = useAddOrderMutation();
   const [addOrder, { isError, isSuccess }] = useAddOrderMutation();
   const dispatch = useDispatch();
 

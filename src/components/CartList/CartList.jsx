@@ -4,7 +4,7 @@ import CartItem from 'components/CartItem/CartItem';
 import { useSelector } from 'react-redux';
 
 export default function CartList() {
-  const cartValue = useSelector(state => state.cart.products);
+  const cartValue = useSelector(state => state.allReducer.cart.products);
   console.log(cartValue);
   return (
     <ul className={css.list}>

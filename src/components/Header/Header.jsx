@@ -7,7 +7,9 @@ import { SlHandbag } from 'react-icons/sl';
 import { useSelector } from 'react-redux';
 
 export default function Header() {
-  const totalQuantity = useSelector(state => state.cart.totalQuantity);
+  const totalQuantity = useSelector(
+    state => state.allReducer.cart.totalQuantity
+  );
 
   return (
     <header>

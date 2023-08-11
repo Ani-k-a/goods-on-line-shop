@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import cart from '../../images/shopping-cart.png';
 
 export default function Cart() {
-  const cartValue = useSelector(state => state.cart.products);
+  const cartValue = useSelector(state => state.allReducer.cart.products);
   return (
     <Section>
       <div className={css.block}>

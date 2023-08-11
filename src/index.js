@@ -13,8 +13,9 @@ import ErrorVievPage from 'pages/ErrorVievPage/ErrorVievPage';
 import AllItemsPage from 'pages/AllItemsPage/AllItemsPage';
 import SingleItemPage from 'pages/SingleItemPage/SingleItemPage';
 import ItemsFromCategoryPage from 'pages/ItemsFromCategoryPage/ItemsFromCategoryPage';
-import { store } from 'redux/store';
+import { store, persistor } from 'redux/store';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react'
 
 const router = createBrowserRouter([
   {
@@ -63,11 +64,13 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router}>
-        <Suspense fallback={<Loader />}>
-          <App />
-        </Suspense>
-      </RouterProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router}>
+          <Suspense fallback={<Loader />}>
+            <App />
+          </Suspense>
+        </RouterProvider>
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );

@@ -70,7 +70,7 @@
     width: 70%;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   .button {
     left: 5%;
     width: 279px;
