@@ -23,9 +23,12 @@ export default function Filter({
     state => state.allReducer.filter.sortingValue
   );
 
-  const updateFilteredProducts = useCallback(sortedProducts => {
-    setFilteredProducts(sortedProducts);
-  }, []);
+  const updateFilteredProducts = useCallback(
+    sortedProducts => {
+      setFilteredProducts(sortedProducts);
+    },
+    [setFilteredProducts]
+  );
 
   useEffect(() => {
     const filteredProducts = products.filter(el => {
