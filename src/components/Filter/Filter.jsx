@@ -61,7 +61,7 @@ export default function Filter({
   ]);
 
   return (
-    <div className={css.container}>
+    <div className={css.containerMain}>
       <div>
         <label className={css.lable}>Price</label>
         <input
@@ -82,7 +82,7 @@ export default function Filter({
         ></input>
       </div>
       {!onlySale && (
-        <div className={css.checkboxBlock}>
+        <div className={css.container}>
           <label className={css.lableCheckbox} htmlFor="checkbox">
             Discounted items
           </label>
@@ -93,6 +93,7 @@ export default function Filter({
             value={discountedOnly}
             onChange={ev => dispatch(selectDiscountedOnly(ev.target.checked))}
           ></input>
+          <span className={css.checkmark}></span>
         </div>
       )}
       <div>

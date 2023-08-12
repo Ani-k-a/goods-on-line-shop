@@ -7,11 +7,5 @@
   margin-bottom: 20px;
   height: 80%;
   width: 100%;
+  object-fit: cover;
 }
-/* @media screen and (min-width: 768px) {
-  .img {
-    width: 318px;
-    height: 350px;
-    object-fit: cover;
-  }
-} */
