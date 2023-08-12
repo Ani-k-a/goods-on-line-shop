@@ -2,11 +2,12 @@
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
+  width: calc(100%-30px);
 }
 
-@media screen and (min-width: 480px) {
+/* @media screen and (min-width: 480px) {
   .container {
-    width: 480px;
+    width: calc(100%-30px);
   }
 }
 @media screen and (min-width: 768px) {
@@ -19,4 +20,4 @@
   .container {
     width: 1200px;
   }
-}
+} */

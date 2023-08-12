@@ -8,7 +8,7 @@
   color: #000;
   font-size: 40px;
   font-weight: 700;
-  margin-right: 102px;
+  margin-right: 32px;
 }
 .link {
   display: inline-block;
@@ -19,14 +19,14 @@
   border: 1px solid #8b8b8b;
 }
 
-.list {
-}
-
 @media screen and (min-width: 768px) {
   .list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+  }
+  .title {
+    margin-right: 102px;
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useSelector } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import css from './Filter.module.css';
 import {
   selectToPrice,
@@ -6,7 +6,7 @@ import {
   selectDiscountedOnly,
   selectSorting,
 } from 'redux/filterSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Filter({
   products,
@@ -15,7 +15,6 @@ export default function Filter({
 }) {
   const dispatch = useDispatch();
   const toPrice = useSelector(state => state.allReducer.filter.toPrice);
-  console.log(toPrice);
   const fromPrice = useSelector(state => state.allReducer.filter.fromPrice);
   const discountedOnly = useSelector(
     state => state.allReducer.filter.setDiscountedOnly
@@ -23,6 +22,10 @@ export default function Filter({
   const sortingValue = useSelector(
     state => state.allReducer.filter.sortingValue
   );
+
+  const updateFilteredProducts = useCallback(sortedProducts => {
+    setFilteredProducts(sortedProducts);
+  }, []);
 
   useEffect(() => {
     const filteredProducts = products.filter(el => {
@@ -44,14 +47,14 @@ export default function Filter({
         return 0;
       }
     });
-    setFilteredProducts(sortedProducts);
+    updateFilteredProducts(sortedProducts);
   }, [
     discountedOnly,
     fromPrice,
-    products,
-    setFilteredProducts,
     sortingValue,
     toPrice,
+    products,
+    updateFilteredProducts,
   ]);
 
   return (
