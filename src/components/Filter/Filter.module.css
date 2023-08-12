@@ -27,7 +27,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .container {
+  .containerMain {
     display: flex;
     flex-direction: row;
     gap: 90px;
@@ -46,7 +46,7 @@
   border: 1px solid #000;
 }
 .container {
-  display: block;
+  display: flex;
   align-items: center;
   position: relative;
   width: 237px;
