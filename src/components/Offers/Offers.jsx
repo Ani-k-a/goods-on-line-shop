@@ -14,7 +14,9 @@ export default function Offers() {
       {isLoading ? (
         <Loader />
       ) : (
-        <ProductsList data={data.filter((el, ind) => ind < 4)} />
+        <ProductsList
+          data={data.filter((el, ind) => el.discont_price).splice(0, 4)}
+        />
       )}
       {error && <ErrorViev />}
     </Section>

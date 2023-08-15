@@ -11,5 +11,5 @@ export const addToCartHandler = (event, el, dispatch) => {
     dispatch(addProductToCart(el));
     dispatch(countTotalPrice());
     dispatch(countTotalQuantity());
-    Notiflix.Notify.success('Product added to cart!');
+    Notiflix.Notify.success(`Product, ${el.title}, added to cart!`);
 };

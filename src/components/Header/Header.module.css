@@ -15,6 +15,13 @@
   border-radius: 5px;
   border: 2px solid #393;
 }
+.catalog:hover,
+.catalog:focus,
+.cartLink:hover,
+.cartLink:focus {
+  transform: scale(1.05);
+  transition-duration: 500ms;
+}
 
 .logo {
   width: 72px;

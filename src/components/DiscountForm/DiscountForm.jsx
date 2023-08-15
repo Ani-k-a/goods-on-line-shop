@@ -49,8 +49,11 @@ export default function DiscountForm() {
         })}
         placeholder="+49"
       />
-      {errors.phone && (
+      {errors.phone?.type === 'required' && (
         <span className={css.alarm}>This field is required</span>
+      )}
+      {errors.phone?.type === 'pattern' && (
+        <span className={css.alarm}>Invalid phone number</span>
       )}
 
       <input type="submit" value="Get a discount" className={css.btn} />

@@ -9,7 +9,7 @@ import storage from 'redux-persist/lib/storage';
 const persistConfig = {
     key: 'basketStorage',
     storage,
-    blacklist: [productsApi.reducer],
+    blacklist: [productsApi.reducer, filterReducer],
 }
 const rootReducer = combineReducers({
     cart: cartReducer,

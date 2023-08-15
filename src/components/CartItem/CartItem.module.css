@@ -5,6 +5,7 @@
 }
 
 .img {
+  object-fit: cover;
   margin-bottom: 15px;
   border-radius: 10px;
 }
@@ -45,6 +46,12 @@
   background-color: transparent;
   border: none;
 }
+
+.btn:hover,
+.btn:focus,
+.close {
+  cursor: pointer;
+}
 .priceBlock {
   display: flex;
   justify-content: space-between;
@@ -65,6 +72,7 @@
 .discont {
   color: #8b8b8b;
   font-size: 20px;
+  text-decoration: line-through;
 }
 .btnDelete {
   display: contents;
@@ -97,6 +105,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin-right: 24px;
+    width: 350px;
   }
   .img {
     width: 192px;
@@ -117,5 +126,11 @@
   .priceBlock {
     max-width: 205px;
     margin-right: 36px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .info {
+    width: 295px;
   }
 }

@@ -1,7 +1,7 @@
 import css from './ProductsList.module.css';
 import ProductItem from 'components/ProductItem/ProductItem';
 import { NavLink } from 'react-router-dom';
-import { addToCartHandler } from 'js/addToCartHandler';
+import { addToCartHandler } from 'utils/addToCartHandler';
 import { useDispatch } from 'react-redux';
 
 export default function ProductsList({ data }) {

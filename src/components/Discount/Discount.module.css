@@ -31,6 +31,9 @@
 .offer {
   margin-bottom: 46px;
 }
+.imgBlock {
+  object-fit: cover;
+}
 
 @media screen and (min-width: 768px) {
   .container {

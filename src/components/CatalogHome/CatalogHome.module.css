@@ -18,6 +18,11 @@
   padding: 8px 15px;
   border: 1px solid #8b8b8b;
 }
+.link:hover,
+.link:focus {
+  transform: scale(1.05);
+  transition-duration: 500ms;
+}
 
 @media screen and (min-width: 768px) {
   .list {

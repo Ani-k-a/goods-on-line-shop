@@ -5,7 +5,7 @@ import Filter from 'components/Filter/Filter';
 import ProductsList from 'components/ProductsList/ProductsList';
 import Title from 'components/Title/Title';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useGetCategoryItemQuery } from 'redux/productsAPI';
 
 export default function ItemsFromCategory() {
@@ -13,8 +13,10 @@ export default function ItemsFromCategory() {
   const { data, error, isLoading } = useGetCategoryItemQuery(id);
   const [filteredProducts, setFilteredProducts] = useState();
 
-  const setProductsFilteredHandler = productsTofilter =>
-    setFilteredProducts(productsTofilter);
+  const setProductsFilteredHandler = useCallback(
+    productsTofilter => setFilteredProducts(productsTofilter),
+    []
+  );
 
   return (
     <Section>

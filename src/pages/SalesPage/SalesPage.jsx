@@ -1,5 +1,5 @@
 import Section from 'components/Section/Section';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Filter from 'components/Filter/Filter';
 import { useGetAllProductsQuery } from 'redux/productsAPI';
 import Title from 'components/Title/Title';
@@ -11,12 +11,12 @@ export default function SalesPage() {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const [filteredProducts, setFilteredProducts] = useState();
 
-  const setProductsFilteredHandler = productsTofilter => {
+  const setProductsFilteredHandler = useCallback(productsTofilter => {
     const productsWithSaleFiltered = productsTofilter.filter(
       el => el.discont_price
     );
     return setFilteredProducts(productsWithSaleFiltered);
-  };
+  }, []);
 
   return (
     <Section>

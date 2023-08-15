@@ -26,6 +26,11 @@
   font-size: 28px;
   font-weight: 700;
 }
+.btn:hover,
+.btn:focus {
+  transform: scale(1.05);
+  transition-duration: 500ms;
+}
 .alarm {
   position: absolute;
   top: 82px;

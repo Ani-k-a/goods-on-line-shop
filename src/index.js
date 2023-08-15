@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    // errorElement: <ErrorViev />,
+    errorElement: <ErrorVievPage />,
     children: [
       {
         path: '/',

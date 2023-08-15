@@ -1,19 +1,20 @@
-// import css from './AllItemsPage.module.css';
 import Section from 'components/Section/Section';
 import ProductsList from 'components/ProductsList/ProductsList';
 import Filter from 'components/Filter/Filter';
 import Title from 'components/Title/Title';
 import Loader from 'components/Loader/Loader';
 import ErrorViev from 'pages/ErrorVievPage/ErrorVievPage';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useGetAllProductsQuery } from 'redux/productsAPI';
 
 export default function AllItemsPage() {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const [filteredProducts, setFilteredProducts] = useState();
 
-  const setProductsFilteredHandler = productsTofilter =>
-    setFilteredProducts(productsTofilter);
+  const setProductsFilteredHandler = useCallback(
+    productsTofilter => setFilteredProducts(productsTofilter),
+    []
+  );
 
   return (
     <Section>

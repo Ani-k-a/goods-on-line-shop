@@ -4,7 +4,7 @@ import ErrorViev from 'pages/ErrorVievPage/ErrorVievPage';
 import { useParams } from 'react-router-dom';
 import { useGetProductItemQuery } from 'redux/productsAPI';
 import { useDispatch } from 'react-redux';
-import { addToCartHandler } from 'js/addToCartHandler';
+import { addToCartHandler } from 'utils/addToCartHandler';
 
 export default function SingleItemPage() {
   const { id } = useParams();

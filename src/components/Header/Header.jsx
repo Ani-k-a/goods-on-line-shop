@@ -2,7 +2,7 @@ import React from 'react';
 import Section from 'components/Section/Section';
 import css from './Header.module.css';
 import { NavLink } from 'react-router-dom';
-import logo from '../../images/logo.png';
+import logo from '../../images/logo.svg';
 import { SlHandbag } from 'react-icons/sl';
 import { useSelector } from 'react-redux';
 

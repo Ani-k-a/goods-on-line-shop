@@ -11,6 +11,7 @@
 }
 .img {
   width: 100%;
+  object-fit: cover;
 }
 .descriptionBox {
   width: 412px;
@@ -58,6 +59,12 @@
   font-weight: 700;
   margin-bottom: 40px;
 }
+.button:hover,
+.button:focus {
+  transform: scale(1.01);
+  transition-duration: 500ms;
+}
+
 .descriptionBlock {
   border-top: 1px dashed #c0c0c0;
   padding-top: 25px;
@@ -119,7 +126,7 @@
   }
   .descriptionBox {
     width: 412px;
-    margin-right: 70px;
+    margin-left: 70px;
   }
   .button {
     padding: 25px 120px;

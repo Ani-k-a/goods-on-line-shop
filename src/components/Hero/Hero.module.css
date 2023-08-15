@@ -37,6 +37,12 @@
   background: #fff;
 }
 
+.link:hover,
+.link:focus {
+  transform: scale(1.05);
+  transition-duration: 500ms;
+}
+
 .backgroundImage {
   display: flex;
   justify-content: space-between;
@@ -48,6 +54,9 @@
   justify-content: center;
   align-items: flex-start;
   padding-top: 80px;
+}
+.img {
+  object-fit: cover;
 }
 
 @media screen and (min-width: 1200px) {
