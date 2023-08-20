@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/greenshop/static/css/main.56437858.css",
-    "main.js": "/greenshop/static/js/main.f6b1cc91.js",
+    "main.js": "/greenshop/static/js/main.044c1021.js",
     "static/media/hero.png": "/greenshop/static/media/hero.824e4b368ece1254351a.png",
     "static/media/error.jpg": "/greenshop/static/media/error.b15db41e8ff13748852d.jpg",
     "static/media/gnome.png": "/greenshop/static/media/gnome.c036eea09188ab215dcb.png",
@@ -9,10 +9,10 @@
     "static/media/shopping-cart.png": "/greenshop/static/media/shopping-cart.7033f67421d5e63955d5.png",
     "index.html": "/greenshop/index.html",
     "main.56437858.css.map": "/greenshop/static/css/main.56437858.css.map",
-    "main.f6b1cc91.js.map": "/greenshop/static/js/main.f6b1cc91.js.map"
+    "main.044c1021.js.map": "/greenshop/static/js/main.044c1021.js.map"
   },
   "entrypoints": [
     "static/css/main.56437858.css",
-    "static/js/main.f6b1cc91.js"
+    "static/js/main.044c1021.js"
   ]
 }
