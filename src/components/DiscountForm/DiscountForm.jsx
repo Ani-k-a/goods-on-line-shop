@@ -55,7 +55,6 @@ export default function DiscountForm() {
       {errors.phone?.type === 'pattern' && (
         <span className={css.alarm}>Invalid phone number</span>
       )}
-
       <input type="submit" value="Get a discount" className={css.btn} />
     </form>
   );

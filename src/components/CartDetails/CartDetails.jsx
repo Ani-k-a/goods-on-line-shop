@@ -60,8 +60,12 @@ export default function CartDetails() {
           })}
           placeholder="Phone number"
         />
-        {errors.phone && <span className={css.alarm}>Enter your number</span>}
-
+        {errors.phone?.type === 'required' && (
+          <span className={css.alarm}>This field is required</span>
+        )}
+        {errors.phone?.type === 'pattern' && (
+          <span className={css.alarm}>Invalid phone number</span>
+        )}
         <input type="submit" value="Order" className={css.btn} />
       </form>
     </div>
