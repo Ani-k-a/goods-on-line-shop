@@ -43,6 +43,7 @@ export default function Filter({
         return 0;
       }
     });
+    console.log(discountedOnly);
     setFilteredProducts(sortedProducts);
   }, [
     discountedOnly,

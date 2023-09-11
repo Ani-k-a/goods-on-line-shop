@@ -99,13 +99,14 @@
   }
   .infoBox {
     flex-direction: row;
+    width: 65%;
   }
   .info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 24px;
-    width: 350px;
+    margin-right: 5%;
+    width: 60%;
   }
   .img {
     width: 192px;
@@ -122,15 +123,9 @@
     margin-bottom: 0px;
   }
 }
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
   .priceBlock {
     max-width: 205px;
     margin-right: 36px;
   }
-}
-
-@media screen and (min-width: 1200px) {
-  .info {
-    width: 295px;
-  }
-}
+} */

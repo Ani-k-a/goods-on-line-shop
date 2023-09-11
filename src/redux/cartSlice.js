@@ -28,8 +28,8 @@ const cartSlice = createSlice({
         countTotalPrice: (state, action) => {
             state.totalPrice = state.products.reduce((total, { price, discont_price, quantity }) => {
                 discont_price ? total += discont_price * quantity : total += price * quantity;
-                return total || total.toFixed(2);
-            }, 0);
+                return total;
+            }, 0).toFixed(2);
 
         },
         countTotalQuantity: (state, action) => {

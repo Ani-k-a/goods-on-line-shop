@@ -56,14 +56,6 @@
   -ms-user-select: none;
   user-select: none;
 }
-/* .customCheckbox {
-  position: absolute;
-  opacity: 0;
-  left: 198px;
-  top: 0;
-  width: 38px;
-  height: 38px;
-} */
 
 .container input {
   position: absolute;
@@ -75,11 +67,7 @@
   width: 38px;
   height: 38px;
 }
-/* .lableCheckbox {
-  display: flex;
-  align-items: center;
-} */
-/* Create a custom checkbox */
+
 .checkmark {
   position: absolute;
   cursor: pointer;

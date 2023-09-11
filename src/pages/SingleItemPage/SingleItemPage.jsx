@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useGetProductItemQuery } from 'redux/productsAPI';
 import { useDispatch } from 'react-redux';
 import { addToCartHandler } from 'utils/addToCartHandler';
+import { BASE_URL } from 'redux/productsAPI';
 
 export default function SingleItemPage() {
   const { id } = useParams();
@@ -28,7 +29,7 @@ export default function SingleItemPage() {
                 <img
                   className={css.img}
                   alt={dates.title}
-                  src={`https://greenshopbackendapi.onrender.com${dates.image}`}
+                  src={`${BASE_URL}${dates.image}`}
                 ></img>
               </div>
               <div className={css.descriptionBox}>
@@ -36,13 +37,12 @@ export default function SingleItemPage() {
                   {dates.discont_price !== null ? (
                     <>
                       <div className={css.price}>
-                        {dates.discont_price &&
-                          Math.round(
-                            (dates.price / dates.discont_price - 1) * 100
-                          )}
+                        {dates.discont_price.toFixed(2)}
                         <span className={css.currency}>$</span>
                       </div>
-                      <div className={css.oldPrice}>{dates.price}$</div>
+                      <div className={css.oldPrice}>
+                        {dates.price.toFixed(2)}$
+                      </div>
                       <div className={css.discount}>
                         {dates.discont_price &&
                           Math.round(
@@ -53,7 +53,7 @@ export default function SingleItemPage() {
                     </>
                   ) : (
                     <>
-                      <div className={css.price}>{dates.price}$</div>
+                      <div className={css.price}>{dates.price.toFixed(2)}$</div>
                     </>
                   )}
                 </div>

@@ -1,4 +1,5 @@
 import css from './ProductItem.module.css';
+import { BASE_URL } from 'redux/productsAPI';
 
 export default function ProductItem({
   image,
@@ -14,11 +15,7 @@ export default function ProductItem({
   return (
     <li className={css.block}>
       <div className={css.imgBox}>
-        <img
-          className={css.img}
-          src={`https://greenshopbackendapi.onrender.com${image}`}
-          alt={title}
-        ></img>
+        <img className={css.img} src={`${BASE_URL}${image}`} alt={title}></img>
         <button onClick={addtoCartHandler} className={css.button}>
           Add to cart
         </button>
@@ -26,13 +23,13 @@ export default function ProductItem({
       <div className={css.priceBlock}>
         {discont_price !== null ? (
           <>
-            <div className={css.price}>{discont_price}$</div>
-            <div className={css.oldPrice}>{price}$</div>
+            <div className={css.price}>{discont_price.toFixed(2)}$</div>
+            <div className={css.oldPrice}>{price.toFixed(2)}$</div>
             <div className={css.discount}>{discount()}%</div>
           </>
         ) : (
           <>
-            <div className={css.price}>{price}$</div>
+            <div className={css.price}>{price.toFixed(2)}$</div>
           </>
         )}
       </div>

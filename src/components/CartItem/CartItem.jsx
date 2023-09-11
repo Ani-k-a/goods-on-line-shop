@@ -9,6 +9,7 @@ import {
   deleteProduct,
 } from 'redux/cartSlice';
 import { useDispatch } from 'react-redux';
+import { BASE_URL } from 'redux/productsAPI';
 
 export default function CartItem({
   title,
@@ -40,11 +41,7 @@ export default function CartItem({
 
   return (
     <li className={css.item}>
-      <img
-        className={css.img}
-        alt={title}
-        src={`https://greenshopbackendapi.onrender.com${image}`}
-      ></img>
+      <img className={css.img} alt={title} src={`${BASE_URL}${image}`}></img>
       <div className={css.infoBox}>
         <div className={css.info}>
           <p className={css.title}>{title}</p>
@@ -62,14 +59,14 @@ export default function CartItem({
           {discont_price ? (
             <>
               <p className={css.price}>
-                {discont_price}
+                {discont_price.toFixed(2)}
                 <span className={css.currencyDiscont}>$</span>
               </p>
-              <p className={css.discont}>{price}$</p>
+              <p className={css.discont}>{price.toFixed(2)}$</p>
             </>
           ) : (
             <p className={css.price}>
-              {price}
+              {price.toFixed(2)}
               <span className={css.currency}>$</span>
             </p>
           )}
