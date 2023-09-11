@@ -28,7 +28,7 @@ const cartSlice = createSlice({
         countTotalPrice: (state, action) => {
             state.totalPrice = state.products.reduce((total, { price, discont_price, quantity }) => {
                 discont_price ? total += discont_price * quantity : total += price * quantity;
-                return total;
+                return total.toFixed(2);
             }, 0);
 
         },
